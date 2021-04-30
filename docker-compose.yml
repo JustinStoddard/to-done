@@ -11,7 +11,7 @@ services:
     volumes:
       - ./frontend/src:/usr/app/src
     ports:
-      - "3000:3000"
+      - '3000:3000'
 
   api:
     build:
@@ -20,19 +20,19 @@ services:
     command: start
     environment:
       - PORT=3001
-      - MONGO_URL=mongodb://api_mongo:27017
+      - MONGO_URL=mongodb://api_mongo:27080
     volumes:
       - ./api/src:/usr/app/src
     ports:
-      - "3001:3001"
+      - '3001:3001'
 
   api_mongo:
     image: mongo:latest
     container_name: api_mongo
-    volume:
+    volumes:
       - mongodb_api:/data/db
     ports:
-      "27017:27017"
+      - '27080:27080'
 
 volumes:
     mongodb_api:

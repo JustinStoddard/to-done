@@ -9,4 +9,4 @@ RUN deno cache deps.ts
 
 ADD . .
 
-ENTRYPOINT ["root/deno/bin/denon"]
+ENTRYPOINT ["/usr/local/bin/denon"]
